@@ -23,7 +23,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         debug{
-            buildConfigField "String", "SERVER_URL", '"http://172.10.10.90/catatan"'
+            buildConfigField "String", "SERVER_URL", '"http://172.10.10.90/catatan/"'
         }
     }
 
