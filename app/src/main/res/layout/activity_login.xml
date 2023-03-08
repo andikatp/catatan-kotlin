@@ -8,7 +8,7 @@
     android:gravity="center"
     android:padding="@dimen/far"
     android:background="@color/colorFree"
-    tools:context=".activity.login.activity_login">
+    tools:context=".LoginActivity">
 
     <ImageView
         android:layout_width="200dp"

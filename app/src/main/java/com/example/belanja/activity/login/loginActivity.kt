@@ -8,6 +8,7 @@ import android.widget.EditText
 import android.widget.Toast
 import com.example.belanja.activity.login.LoginPresenter
 import com.example.belanja.activity.login.LoginView
+import com.example.belanja.base.BaseActivity
 import com.example.belanja.model.User
 
 class LoginActivity : AppCompatActivity(), LoginView {
@@ -39,11 +40,15 @@ class LoginActivity : AppCompatActivity(), LoginView {
      override fun onSuccessLogin(user: User?){
         Toast.makeText(this, "Berhasil Login", Toast.LENGTH_SHORT).show()
          val intent = Intent(this, MainActivity::class.java).apply  {
+             putExtra(BaseActivity.TAGS.USER, user)
+
          }
+         finish()
+         startActivity(intent)
     }
 
     override fun onErrorLogin(msg: String?){
-        Toast.makeText(this, "asdas", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
     }
 
 }
