@@ -42,6 +42,7 @@ class LoginActivity : AppCompatActivity(), LoginView {
          val intent = Intent(this, MainActivity::class.java).apply  {
              putExtra(BaseActivity.TAGS.USER, user)
 
+
          }
          finish()
          startActivity(intent)
