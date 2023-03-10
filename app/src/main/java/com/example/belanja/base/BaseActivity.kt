@@ -19,15 +19,10 @@ open class BaseActivity  : AppCompatActivity(){
 
     var user: User?=null
 
-
-
-
     fun cekSesi(activity: Activity){
-        val intent = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            activity.intent.getSerializableExtra("user", User::class.java)
-        } else {
+       val intent =
             activity.intent.getSerializableExtra("user")
-        }
+
 
         if(intent == null)
         {

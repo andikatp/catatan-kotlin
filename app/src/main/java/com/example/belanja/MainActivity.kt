@@ -13,9 +13,8 @@ import com.example.belanja.activity.barang.BarangActivity
 import com.example.belanja.activity.penjualan.PenjualanActivity
 import com.example.belanja.base.BaseActivity
 
-class MainActivity : BaseActivity(){
+class MainActivity : BaseActivity() {
 
-    @RequiresApi(Build.VERSION_CODES.TIRAMISU)
     override fun onCreate(savedInstanceState: Bundle?) {
         cekSesi(this)
         super.onCreate(savedInstanceState)
@@ -23,32 +22,34 @@ class MainActivity : BaseActivity(){
 
         initActionButton()
         findViewById<TextView>(R.id.tvWelcome).text = "Welcome ${user?.username}"
-
-
     }
-    fun initActionButton()
-    {
+
+    private fun initActionButton() {
         findViewById<RecyclerView>(R.id.mainMenu).adapter =
-            MenuAdapter(object : MenuAdapter.OnMenuClick{
+            MenuAdapter(object : MenuAdapter.OnMenuClick {
                 override fun onClick(image: Int) {
-                    when(image){
+                    when (image) {
                         R.drawable.ic_goods -> openDataBarang()
                         R.drawable.ic_shopping_cart -> openDataPenjualan()
                     }
                 }
-            })
+            }
+            )
     }
 
-    private fun openDataBarang()
-    {
-        val intent = Intent(this, BarangActivity::class.java)
-        startActivity(intent)
+    private fun openDataBarang() {
+        val intent = Intent(this, BarangActivity::class.java).apply {
+            intent.putExtra(TAGS.USER, user)
+        }
+             startActivity(intent)
     }
 
-    private fun openDataPenjualan()
-    {
-        val intent = Intent(this, PenjualanActivity::class.java)
-        startActivity(intent)
+    private fun openDataPenjualan() {
+        val intent = Intent(this, PenjualanActivity::class.java).apply {
+            intent.putExtra(TAGS.USER, user)
+        }
+
+              startActivity(intent)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
