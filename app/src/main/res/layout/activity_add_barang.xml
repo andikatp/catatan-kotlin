@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.barang.add.AddBarangActivity"
+    android:padding="@dimen/far"
+    >
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        >
+        <EditText
+            android:id="@+id/etAddBarangBarcode"
+            android:hint="barcode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_light"/>
+        <EditText
+            android:id="@+id/etAddBarangNamaBarang"
+            android:hint="nama barang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/normal"
+            android:background="@drawable/background_light"
+            />
+        <EditText
+            android:id="@+id/etAddBarangKategori"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Kategori"
+            android:layout_marginTop="@dimen/normal"
+            android:background="@drawable/background_light"/>
+        <EditText
+            android:id="@+id/etAddBarangHargaBeli"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="0"
+            android:inputType="numberDecimal"
+            android:background="@drawable/background_light"
+            android:layout_marginTop="@dimen/normal"
+            />
+        <EditText
+            android:id="@+id/etAddBarangHargaJual"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="0"
+            android:inputType="numberDecimal"
+            android:background="@drawable/background_light"
+            android:layout_marginTop="@dimen/normal"
+            />
+        <Button
+            android:id="@+id/btAddBarang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_dark"
+            android:layout_marginTop="@dimen/normal"
+            android:text="Tambahkan"
+            android:textColor="@color/colorFree"
+            />
+
+
+    </LinearLayout>
+
+</ScrollView>

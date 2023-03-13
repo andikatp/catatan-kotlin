@@ -16,6 +16,7 @@ class DataBarangPresenter(val dataBarangView: DataBarangView) {
                     dataBarangView.onSuccessDataBarang(body?.barang)
                 }
                 override fun onFailure(call: Call<ResultDataBarang>, t: Throwable) {
+
                     dataBarangView.onErrorDataBarang(t.localizedMessage)
                 }
 

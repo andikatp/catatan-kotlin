@@ -6,7 +6,7 @@ import javax.annotation.Generated
 @Generated("com.robohorse.robopojogenerator")
 data class User (
     @field:SerializedName("id_user")
-    var id_user:String?=null,
+    var id_user:Int?=null,
 
     @field:SerializedName("username")
     var username:String?=null,

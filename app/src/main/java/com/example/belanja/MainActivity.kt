@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.belanja.activity.barang.BarangActivity
 import com.example.belanja.activity.penjualan.PenjualanActivity
 import com.example.belanja.base.BaseActivity
+import com.example.belanja.model.Barang
 
 class MainActivity : BaseActivity() {
 
@@ -39,14 +40,14 @@ class MainActivity : BaseActivity() {
 
     private fun openDataBarang() {
         val intent = Intent(this, BarangActivity::class.java).apply {
-            intent.putExtra(TAGS.USER, user)
+          putExtra(TAGS.USER, user)
         }
              startActivity(intent)
     }
 
     private fun openDataPenjualan() {
         val intent = Intent(this, PenjualanActivity::class.java).apply {
-            intent.putExtra(TAGS.USER, user)
+            putExtra(TAGS.USER, user)
         }
 
               startActivity(intent)
