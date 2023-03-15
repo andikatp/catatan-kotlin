@@ -18,6 +18,22 @@ class AddBarangPresenter (val addBarangView: AddBarangView) {
                 addBarangView.onErrorAddBarang(t.localizedMessage)
             }
 
-        })
+        }
+            )
+    }
+
+    fun updateBarang(dataBarang: Barang){
+        NetworkConfig.service().editBarang(dataBarang.idBarang, dataBarang.idUser, dataBarang.barcode, dataBarang.namaBarang, dataBarang.kategori, dataBarang.hargaBeli, dataBarang.hargaJual)
+            .enqueue(object: Callback<Barang>{
+                override fun onResponse(call: Call<Barang>, response: Response<Barang>) {
+                    val body = response.body()
+                    addBarangView.onSuccessAddBarang(body?.namaBarang)
+                }
+
+                override fun onFailure(call: Call<Barang>, t: Throwable) {
+                  addBarangView.onErrorAddBarang(t.localizedMessage)
+                }
+
+            })
     }
 }

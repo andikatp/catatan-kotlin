@@ -26,7 +26,7 @@ open class BaseActivity  : AppCompatActivity(){
 
         if(intent == null)
         {
-            Toast.makeText(activity, "Anda Belum Login", Toast.LENGTH_SHORT )
+            Toast.makeText(activity, "Anda Belum Login", Toast.LENGTH_SHORT ).show()
             activity.finish()
         } else {
             user = intent as User
